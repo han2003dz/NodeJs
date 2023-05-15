@@ -1,0 +1,5 @@
+class NewController{
+    index(){
+        
+    }
+}
