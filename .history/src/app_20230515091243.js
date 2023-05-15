@@ -4,7 +4,7 @@ const expressHandlebars = require("express-handlebars");
 const handlebars = expressHandlebars.create();
 const app = express();
 const path = require("path");
-const port = 4000;
+const port = 3000;
 
 // img
 app.use(express.static(path.join(__dirname, "public")));

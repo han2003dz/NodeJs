@@ -1,25 +1,25 @@
 const express = require("express");
 const morgan = require("morgan");
-const expressHandlebars = require("express-handlebars");
+const expressHandlebars = require('express-handlebars');
 const handlebars = expressHandlebars.create();
 const app = express();
-const path = require("path");
-const port = 4000;
+const path = require('path');
+const port = 3000;
 
 // img
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 // http logger
-app.use(morgan("combined"));
+app.use(morgan('combined'));
 
 // template engine
-app.engine("handlebars", handlebars.engine);
-app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "resources/views"));
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'resources/views'));
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render('home');
 });
 app.get("/news", (req, res) => {
-  res.render("news");
+  res.render('news');
 });
 // 127.0.0.1 - localhost
 app.listen(port, () => {
